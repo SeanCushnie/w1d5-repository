@@ -27,16 +27,28 @@ def get_pets_by_breed(pet_shop, pet_name):
     return pets
         
 
-
-
-
-
-
-
 def find_pet_by_name(pet_shop, pet_name):
     # pdb.set_trace()
     for pet in pet_shop["pets"]:
         if pet["name"] == pet_name:
             return pet
+
+def remove_pet_by_name(pet_shop, pet_name):
+    for pet in pet_shop["pets"]:
+        if pet["name"] == pet_name:
+            pet_shop["pets"].remove(pet)
+
+def add_pet_to_stock(pet_shop, new_pet):
+    pet_shop["pets"].append(new_pet)
+
+def get_customer_cash(customer):
+    return customer["cash"]
+
+def remove_customer_cash(customer, cash):
+    customer["cash"] -= cash
+
+
+
+
+            
         
-    
